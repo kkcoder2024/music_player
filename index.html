@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_project_12_music_player</title>
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- google icon cdn  -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="music_player">
+            <nav class="navbar" style="margin-bottom: 50px;">
+                <div class="navbar_icon" id="volume_btn">
+                    <span id="volume_box" class="material-symbols-outlined">
+                        volume_up
+                    </span>
+                    <div class="vol_range_box" style="display: none;">
+                        <input type="range" id="vol_rang" min="0" max="100" value="90">
+                    </div>
+                </div>
+                <div class="navbar_icon"><i class="fa-regular fa-heart"></i></div>
+            </nav>
+            <div class="song_elem1" class="anim_1">
+                <img src="img/elem_1.png" style="width: 100%; height: 100%;" alt="">
+            </div>
+            <div class="song_elem2">
+                <img src="img/elem_2.png" style="width: 100%; height: 100%;" alt="">
+            </div>
+            <div class="picture">
+                <img class="imgs" src="" alt="">
+                <h2 class="m_name"></h2>
+                <p>~ <span class="m_artist"></span> ~</p>
+
+            </div>
+            <div class="play_box">
+                <audio id="song_source" src=""></audio>
+                <input type="range" min="0" max="100" value="0" id="prog_range">
+                <div class="timer">
+                    <span id="pre_time" class="current"></span>
+                    <span id="pro_time" class="current"></span>
+                </div>
+            </div>
+            <div class="controls">
+                <div id="song_loop_btn_box">
+                    <span id="repeat_one" style="display: none;" class="material-symbols-outlined">repeat_one</span>
+                    <span id="repeat" style="display: block;" class="material-symbols-outlined">repeat</span>
+                </div>
+
+                <div onclick="skip_previous_btn()"><span id="skip_previous"
+                        class="material-symbols-outlined">skip_previous</span></div>
+
+                <div class="main_btn">
+                    <i id="ctrlIcon" class="fa-solid fa-play"></i>
+                </div>
+
+                <div onclick="skip_next_btn()">
+                    <span id="skip_next" class="material-symbols-outlined">skip_next</span>
+                </div>
+
+                <div id="song_list"><span class="material-symbols-outlined">queue_music</span></div>
+            </div>
+            <div class="music_list">
+                <div class="list_item">
+                    <div class="header">
+                        <div class="row">
+                            <span id="queue_music" class="material-symbols-outlined">queue_music</span>
+                            <span>Music List</span>
+                        </div>
+                        <span id="close" class="material-symbols-outlined">close</span>
+                    </div>
+                    <ul class="song_items">
+                        <!-- all song show here by js  -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
